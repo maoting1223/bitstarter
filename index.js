@@ -5,7 +5,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send('Welcome to Ting Mao Startup Engineering Website')
+  response.send('Hello World from index.html')
 })
 
 app.listen(app.get('port'), function() {
