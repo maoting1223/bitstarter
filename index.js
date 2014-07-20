@@ -1,10 +1,10 @@
-var express = require('express');
+var express = require('express'), http = require('http');
 var fs = require('fs');
 
 var data = fs.readFileSync('index.html', 'utf-8');
-var logger = require('morgan');
 
-var app = express.createServer(logger);
+var app = express();
+var server = http.createServer(app);
 
 app.get('/', function(request, response) {
   response.send(data);
