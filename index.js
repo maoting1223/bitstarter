@@ -2,8 +2,9 @@ var express = require('express');
 var fs = require('fs');
 
 var data = fs.readFileSync('index.html', 'utf-8');
+var logger = require('morgan');
 
-var app = express.createServer(express.logger());
+var app = express.createServer(logger);
 
 app.get('/', function(request, response) {
   response.send(data);
